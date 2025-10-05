@@ -20,6 +20,10 @@ function(find_and_configure_spdlog)
   rapids_export_package(BUILD spdlog rmm-exports)
 
   if(spdlog_ADDED)
+    # Force spdlog to use C++17 (required for compatibility with fmt 11.x)
+    set_target_properties(spdlog PROPERTIES CXX_STANDARD 17 CXX_STANDARD_REQUIRED ON)
+    set_target_properties(spdlog_header_only PROPERTIES INTERFACE_COMPILE_FEATURES cxx_std_17)
+
     include("${rapids-cmake-dir}/export/find_package_root.cmake")
     rapids_export_find_package_root(BUILD spdlog [=[${CMAKE_CURRENT_LIST_DIR}]=]
                                     EXPORT_SET rmm-exports)
