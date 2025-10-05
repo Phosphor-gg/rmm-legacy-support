@@ -66,7 +66,7 @@ rapids_find_package(
 # * dependencies -----------------------------------------------------------------------------------
 
 # add third party dependencies using CPM
-rapids_cpm_init(OVERRIDE "${CMAKE_CURRENT_SOURCE_DIR}/cmake/versions.json")
+rapids_cpm_init()
 
 include(cmake/thirdparty/get_fmt.cmake)
 include(cmake/thirdparty/get_spdlog.cmake)
