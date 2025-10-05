@@ -73,7 +73,7 @@ dependencies:
           - cxx-compiler
           - fmt>=9.1.0,<10
           - spdlog>=1.11.0,<1.12
-          - python>=3.9,<3.11
+          - python>=3.9,<3.12
       - output_types: pyproject
         packages:
           - wheel
@@ -197,6 +197,10 @@ dependencies:
               py: "3.10"
             packages:
               - python=3.10
+          - matrix:
+              py: "3.11"
+            packages:
+              - python=3.11
   run:
     common:
       - output_types: [conda, requirements, pyproject]
