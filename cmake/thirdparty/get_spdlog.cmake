@@ -16,8 +16,7 @@
 function(find_and_configure_spdlog)
 
   include(${rapids-cmake-dir}/cpm/spdlog.cmake)
-  rapids_cpm_spdlog(FMT_OPTION "EXTERNAL_FMT_HO" INSTALL_EXPORT_SET rmm-exports
-                    CPM_ARGS VERSION 1.14.1 GIT_TAG v1.14.1)
+  rapids_cpm_spdlog(FMT_OPTION "EXTERNAL_FMT_HO" INSTALL_EXPORT_SET rmm-exports)
   rapids_export_package(BUILD spdlog rmm-exports)
 
   if(spdlog_ADDED)
